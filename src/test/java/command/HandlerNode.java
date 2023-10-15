@@ -73,5 +73,5 @@ class HandlerNodeTest {
         String equalResult = "Показывает список команд, доступных в боте";
         Assertions.assertEquals(result, equalResult);
     }
-    
+
 }
