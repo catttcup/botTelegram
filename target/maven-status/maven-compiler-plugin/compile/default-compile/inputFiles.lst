@@ -1,0 +1,9 @@
+/home/yoforik/poge/telegram_bot/TestTelegramBot/src/main/java/common/WorkWithMessage.java
+/home/yoforik/poge/telegram_bot/TestTelegramBot/src/main/java/command/EchoNode.java
+/home/yoforik/poge/telegram_bot/TestTelegramBot/src/main/java/command/HandlerNode.java
+/home/yoforik/poge/telegram_bot/TestTelegramBot/src/main/java/command/StartNode.java
+/home/yoforik/poge/telegram_bot/TestTelegramBot/src/main/java/command/HelpNode.java
+/home/yoforik/poge/telegram_bot/TestTelegramBot/src/main/java/Main.java
+/home/yoforik/poge/telegram_bot/TestTelegramBot/src/main/java/command/ICommand.java
+/home/yoforik/poge/telegram_bot/TestTelegramBot/src/main/java/command/AboutNode.java
+/home/yoforik/poge/telegram_bot/TestTelegramBot/src/main/java/bot/TelegramBot.java
