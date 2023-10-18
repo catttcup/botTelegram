@@ -12,8 +12,5 @@
         <module name="botTelegram" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="TestTelegramBot" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>
