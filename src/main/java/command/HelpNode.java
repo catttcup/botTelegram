@@ -4,10 +4,17 @@ import java.util.HashMap;
 
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 
+/*
+ * класс реализуемый команду /help
+ */
 public class HelpNode implements ICommand {
     public final String infoAboutCommands;
     public final String infoAboutCommand = "Показывает список команд, доступных в боте";
     private final HashMap<String, ICommand> commandHashMap;
+    
+    /*
+     * метод показывающий кикие команды есть у бота 
+     */
     public HelpNode(HashMap<String, ICommand> map) {
         commandHashMap = map;
         StringBuilder strTemp = new StringBuilder();
@@ -19,6 +26,9 @@ public class HelpNode implements ICommand {
         infoAboutCommands = strTemp.toString();
     }
 
+    /*
+     * метод реализуемый выполнение команд
+     */
     @Override
     public SendMessage doCommand(String text) {
         SendMessage msg = new SendMessage();
@@ -27,12 +37,16 @@ public class HelpNode implements ICommand {
                 msg.setText(commandHashMap.get(text).getInfo());
                 return msg;
             }
-            return null;
+            msg.setText("Такой команды нет, напишите /help чтобы узнать доступные команды");
+            return msg;
         }
         msg.setText(infoAboutCommands);
         return msg;
     }
 
+    /*
+     * метод показывающий иныормацию о командах
+     */
     @Override
     public String getInfo() {
         return infoAboutCommand;

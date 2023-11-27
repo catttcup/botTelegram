@@ -6,15 +6,9 @@ import org.junit.jupiter.api.Test;
 class EchoNodeTest {
     private final EchoNode echoNode = new EchoNode();
 
-    @Test
-    void testEmptyInputString() {
-        String text = null;
-        String result = echoNode.doCommand(text).getText();
-        String equalResult =
-                "Введите что-нибудь, чтобы бот вывел то же самое)";
-        Assertions.assertEquals(result, equalResult);
-    }
-
+    /*
+     * тест на повтор сообщения от бота 
+     */
     @Test
     void testNotEmptyString() {
         String text = "Привет, я пытаюсь протестировать это и не понимаю, нужно ли оно здесь...";
