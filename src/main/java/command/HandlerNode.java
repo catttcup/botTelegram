@@ -15,8 +15,13 @@ public class HandlerNode {
         commands.put("about", new AboutNode());
         commands.put("echo", new EchoNode());
         commands.put("start", new StartNode());
+        commands.put("game", new PlayNode());
         commands.put("help", new HelpNode(commands));
        
+    }
+
+    public SendMessage correctAnswer(String text, Long user_id){
+        return commands.get("game").doCommand(text, user_id);
     }
 
     /*
@@ -35,6 +40,6 @@ public class HandlerNode {
             sendMessage.setText("Такой команды нет, напишите /help чтобы узнать доступные команды");
             return sendMessage;
         }
-        return commands.get(command).doCommand(parameter);
+        return commands.get(command).doCommand(parameter, user_id);
     }
 }

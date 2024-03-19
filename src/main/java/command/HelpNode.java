@@ -30,7 +30,7 @@ public class HelpNode implements ICommand {
      * метод реализуемый выполнение команд
      */
     @Override
-    public SendMessage doCommand(String text) {
+    public SendMessage doCommand(String text, Long id) {
         SendMessage msg = new SendMessage();
         if (text != null) {
             if (commandHashMap.containsKey(text)) {

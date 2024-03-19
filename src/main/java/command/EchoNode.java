@@ -14,7 +14,7 @@ public class EchoNode implements ICommand {
      * реализация метода для выполнения команды /echo
      */
     @Override
-    public SendMessage doCommand(String text){
+    public SendMessage doCommand(String text, Long id){
         SendMessage msg = new SendMessage();
         if (text == null){
             msg.setText("Введите что-нибудь, чтобы бот вывел то же самое)");

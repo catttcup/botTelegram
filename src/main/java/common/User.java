@@ -1,9 +1,5 @@
 package common;
-
-
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-
-import common.CreateExamples.Answer;
 
 public class User {
     public Long id;
@@ -28,8 +24,7 @@ public class User {
     }
 
     public String generatEx(){
-        CreateExamples create = new CreateExamples();
-        Answer correctAnswer = create.GenerationExamples();
+        Answer correctAnswer = new Answer();
         LastAnswer = correctAnswer.sum;
         return correctAnswer.strAnsw;
     }
@@ -45,10 +40,11 @@ public class User {
         msg.setText(startStr);
         return msg;
     }
+
     public SendMessage stop(){
         SendMessage msg = new SendMessage();
         if (Isgame == false){
-            msg.setText("Неправильный ответ!");
+            msg.setText("игра еще не началась");
             return msg;
         }
         Isgame = false;
@@ -65,21 +61,21 @@ public class User {
             msg.setText("Пожалуста вводите в ответ цифры");
             return msg;
         } else {
-                int ans = Integer.parseInt(text);
-                String response;
-                if (ans == LastAnswer){
-                    response ="Правильно";
-                    score += 1;
-                }
-                else{
-                    response = "Неправильно! Правильный ответ: " + LastAnswer;
-                    if (score != 0){
-                        score -= 1;
-                    }
-                }
-                response += "\n Ваш следующий пример:" + generatEx();
-                msg.setText(response);
+            int ans = Integer.parseInt(text);
+            String response;
+            if (ans == LastAnswer){
+                response ="Правильно";
+                score += 1;
             }
+            else{
+                response = "Неправильно! Правильный ответ: " + LastAnswer;
+                if (score != 0){
+                    score -= 1;
+                }
+            }
+            response += "\n Ваш следующий пример:" + generatEx();
+            msg.setText(response);
+        }
         return msg;
     }
 }

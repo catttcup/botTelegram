@@ -14,7 +14,7 @@ public class StartNode implements ICommand {
      * реализация метода выполнения команды /start
      */
     @Override
-    public SendMessage doCommand(String text) {
+    public SendMessage doCommand(String text, Long id) {
         SendMessage msg = new SendMessage();
         msg.setText(infoAboutBot);
         return msg;

@@ -16,7 +16,7 @@ public class AboutNode implements ICommand {
      * реализация метода для выполнения команды /about
      */
     @Override
-    public SendMessage doCommand(String text) {
+    public SendMessage doCommand(String text, Long id) {
         SendMessage msg = new SendMessage();
         msg.setText(infoAboutBot);
         return msg;
